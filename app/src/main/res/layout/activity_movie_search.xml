@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MovieSearch"
+    android:background="@color/colorPrimary">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/head"
+        android:text="Search Movies"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        android:fontFamily="@font/montserrat_bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/head"
+        android:id="@+id/searchLayout"
+        android:weightSum="10"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp">
+        <EditText
+            android:id="@+id/searchTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="@drawable/edit_back"
+            android:layout_weight="9"
+            android:layout_marginEnd="15dp"
+            android:maxLines="1"
+            android:hint="Movie Title"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textColor="@color/black"
+            android:padding="10dp"
+
+            />
+
+
+
+            <ImageView
+                android:id="@+id/searchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_search_24"
+                android:padding="4dp"
+                android:layout_gravity="center_vertical"
+
+
+                />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Results"
+        android:fontFamily="@font/montserrat_semibold"
+        android:layout_below="@id/searchLayout"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:textSize="20sp"
+        android:visibility="gone"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchDashboard"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/resultTV"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchLoading"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/noResult"
+        android:text="No Result"
+        android:fontFamily="@font/montserrat_semibold"
+        android:textSize="20sp"
+        android:textColor="@color/lightGrey"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+</RelativeLayout>
